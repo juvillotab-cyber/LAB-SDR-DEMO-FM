@@ -1,8 +1,44 @@
 # SDR-demo — Receptor FM en Tiempo Real con RTL-SDR
 
+## Objetivo del laboratorio
+
+Implementar un receptor FM en tiempo real usando un RTL-SDR y Linux, capaz de captar señales de radio mediante una antena, procesar las muestras I/Q, visualizar el espectro mediante PSD y demodular una emisora FM para reproducir audio.
+
+El sistema se divide en dos rutas principales:
+
+- Ruta espectral: análisis de potencia y localización de la señal en frecuencia.
+- Ruta de audio: demodulación FM y reproducción en tiempo real.
+
 Dashboard web con demodulación FM, Welch PSD en tiempo real, y controles interactivos
 de sintonización.  Todo el procesamiento de señal corre en Python puro sobre
 librerías científicas estándar (NumPy, SciPy).
+
+---
+
+## Diagrama general del sistema
+
+El flujo completo del sistema parte de la señal captada por la antena y digitalizada por el RTL-SDR como muestras complejas I/Q.
+
+```text
+Antena
+  │
+  ▼
+RTL-SDR
+  │
+  ▼
+Muestras I/Q
+  │
+  ├──────────────────────────────┐
+  ▼                              ▼
+Proceso 1: Análisis espectral    Proceso 2: Audio en tiempo real
+Buffer I/Q                       Buffer rápido
+  │                              │
+  ▼                              ▼
+PSD Welch                        Demodulación FM
+  │                              │
+  ▼                              ▼
+Visualización espectral          Reproducción de audio
+Fc, BW, P                        Parlantes
 
 ---
 
