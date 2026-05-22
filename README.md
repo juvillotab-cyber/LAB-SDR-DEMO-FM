@@ -1,4 +1,10 @@
-# SDR-demo — Receptor FM en Tiempo Real con RTL-SDR
+# integrantes del grupo
+- Maria Prieto
+- Mariana Zuluaga
+- Juan David Villota Bernal
+- Ever Daniel Hernández
+  
+## SDR-demo — Receptor FM en Tiempo Real con RTL-SDR
 
 Dashboard web con demodulación FM, Welch PSD en tiempo real, y controles interactivos
 de sintonización.  Todo el procesamiento de señal corre en Python puro sobre
